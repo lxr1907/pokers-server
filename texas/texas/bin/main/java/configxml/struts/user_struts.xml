@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="user" namespace="/" extends="base">
+		<action name="login" class="yuelj.action.UserAction" method="login">
+		</action>
+		<action name="logOut" class="yuelj.action.UserAction" method="logOut">
+		</action>
+		<action name="regist" class="yuelj.action.UserAction" method="regist">
+		</action>
+		<action name="operatorLogin" class="yuelj.action.UserAction"
+			method="operatorLogin">
+		</action>
+		<action name="getRegistCode" class="yuelj.action.UserAction"
+			method="getRegistCode">
+		</action>
+		<action name="getForgetPasswordCode" class="yuelj.action.UserAction"
+			method="getForgetPasswordCode">
+		</action>
+		<action name="forgetUpdatePassword" class="yuelj.action.UserAction"
+			method="forgetUpdatePassword">
+		</action>
+		<action name="rand" class="yuelj.action.VerifyCodeAction">
+			<result type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<action name="selectTeachers" class="yuelj.action.UserAction"
+			method="selectTeachers">
+		</action>
+	</package>
+	<!-- app用户权限的接口 -->
+	<package name="userUser" namespace="/user" extends="base">
+		<action name="updateMyInfo" class="yuelj.action.UserAction"
+			method="updateMyInfo">
+		</action>
+		<action name="updateToken" class="yuelj.action.UserAction"
+			method="updateToken">
+		</action>
+	</package>
+	<!-- 需要操作员权限的接口 -->
+	<package name="operatoruser" namespace="/operator" extends="base">
+		<action name="updateUserState" class="yuelj.action.UserAction"
+			method="updateUserState">
+		</action>
+		<action name="selectUsers" class="yuelj.action.UserAction"
+			method="selectUsers">
+		</action>
+		<action name="updateUser" class="yuelj.action.UserAction"
+			method="updateUser">
+		</action>
+		<action name="freezeUser" class="yuelj.action.UserAction"
+			method="freezeUser">
+		</action>
+	</package>
+</struts>

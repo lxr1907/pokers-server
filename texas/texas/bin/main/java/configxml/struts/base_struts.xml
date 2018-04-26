@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="base" namespace="/" extends="struts-default">
+		<interceptors>
+			<!-- 注册自定义的拦截器 -->
+			<interceptor name="exceptionInterceptor"
+				class="yuelj.utils.interceptors.ExceptionInterceptor" />
+			<interceptor name="autowiring"
+				class="com.opensymphony.xwork2.spring.interceptor.ActionAutowiringInterceptor" />
+
+			<!-- 把自定义拦截器和默认的拦截器栈加到新的自定义的拦截器栈 -->
+			<interceptor-stack name="myInterceptors">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="autowiring" />
+				<interceptor-ref name="exceptionInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+		<!-- 指定新的自定义的拦截器栈为默认的拦截器栈，这样自定义的权限控制拦截器就可以发挥作用了 -->
+		<default-interceptor-ref name="myInterceptors" />
+	</package>
+</struts>
