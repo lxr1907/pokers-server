@@ -15,8 +15,10 @@ http://120.26.217.116:8080/texas/texasIndex.html.
 
 包含登陆注册功能，筹码排行榜，德州扑克仅有3种下注额度的房间。 
 
-参考效果地址1德州：
+参考效果地址
+1德州：
 http://120.26.217.116:8080/texas/texasIndex.html 
+
 2拼三张：
 http://120.26.217.116:8080/texas/threeCard.html
 
